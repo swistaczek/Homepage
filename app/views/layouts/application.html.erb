@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Keraxel's Homesite</title>
+		<%= stylesheet_link_tag :all %>
+		<%= javascript_include_tag :defaults %>
+		<%= javascript_include_tag "harvester" %>
+		<%= csrf_meta_tag %>
+	</head>
+	<body>
+		<header>
+			<h1>Kamil Cieślak</h1>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<a href="#">Blog</a>
+				</li>
+				<li>
+					<a href="#">About</a>
+				</li>
+				<li>
+					<a href="#">Archives</a>
+				</li>
+				<li class="rss">
+					<a href="#">RSS</a>
+				</li>
+			</ul>
+		</nav>
+		<section id="content">
+			<section id="main">
+				<article class="blogPost">
+					<header>
+						<h2>Strona w budowie</h2>
+						<p>
+							Posted on
+							<time datetime="2011-09-19T23:31:45+01:00">
+								June 29th 2009
+							</time>
+							by <a href="#">Kamil Cieślak</a> - <a href="#comments">666 comments</a>
+						</p>
+					</header>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu orci imperdiet nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum vel, fermentum id tellus. Proin metus odio, ultricies eu pharetra dictum, laoreet id odio...
+					</p>
+					<%= yield %>
+				</article>
+			</section>
+			<div id="space"></div>
+			<aside>
+				<section>
+					<header>
+						<h3>Kontakt</h3>
+					</header>
+					<ul class="contact">
+						<li>
+							<script type="text/javascript">
+								<!--antinbsp
+								showMeineMajl("email", "kamil.michal.cieslak", "gmail.com", "");
+								//-->
+							</script>
+							<a id="jabber" href="xmpp:keraxel@ubuntu.pl" title="Jabber/XMPP"></a>
+						</li>
+						<li>
+							<a id="live-messenger" href="msnim:chat?contact=keraxel@hotmail.com" title="Windows Live Messenger"></a><a id="gadu" href="gg:9516672" title="Gadu-Gadu"></a>
+						</li>
+						<li>
+							<a id="facebook" href="https://www.facebook.com/Keraxel" title="Facebook"></a><a id="google-plus" href="https://plus.google.com/113284672687908084033/" title="Google+"></a>
+						</li>
+						<li>
+							<img id="qr" src="images/Kamil-Cieslak.png" alt="QR Code" title="QR Code"></img>
+						</li>
+					</ul>
+				</section>
+			</aside>
+		</section>
+		<footer>
+			Copyright &copy; 2011 by Kamil Cieślak.
+		</footer>
+	</body>
+</html>

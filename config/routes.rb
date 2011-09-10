@@ -1,4 +1,10 @@
 Homepage::Application.routes.draw do
+  resources :authors
+
+  resources :comments
+
+  resources :posts
+
   root :to => 'home#index'
 
   get "home/index"

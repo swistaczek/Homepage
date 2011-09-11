@@ -1,5 +1,5 @@
 Homepage::Application.routes.draw do
-  root :to => 'home#index'
+  root :to => 'posts#index'
   
   resources :authors
 
@@ -7,7 +7,7 @@ Homepage::Application.routes.draw do
 
   resources :posts
 
-  get "home/index"
+  get "page/about"
 
   match ':controller(/:action(/:id(.:format)))'
 

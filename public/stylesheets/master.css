@@ -30,6 +30,18 @@ h3 {
 	padding: 5px 20px;
 }
 
+a {
+	color: #333;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+}
+
+a:hover {
+	color: #000;
+}
+
 p {
 	padding-bottom: 22px;
 }
@@ -68,12 +80,7 @@ nav ul li {
 		-o-transition: all 0.4s ease;
 	}
 
-		nav ul li a:hover {
-			opacity: 1;
-			color: #fff;
-		}
-
-		nav ul li.selected a {
+		nav ul li a:hover, nav ul li a.selected {
 			opacity: 1;
 			color: #fff;
 		}
@@ -110,14 +117,28 @@ nav ul li {
 		text-overflow: ellipsis;
 	}
 	
+		#main header h2 a {
+			text-transform: capitalize;
+			text-decoration: none;
+			color: #333;
+		}
+	
 		#main header p {
 			text-indent: 0;
+		}
+		
+		#main header p:first-letter {
+			font-size: inherit;
 		}
 	
 		#main p {
 			margin-top: -10px;
 			padding-left: 20px;
 			text-indent: 10px;
+		}
+		
+		#main p:first-letter {
+			/*font-size: 30px;*/
 		}
 	
 	#content #space {

@@ -1,11 +1,24 @@
-<% @page_title = "Blog" %>
+<% 
+@page_title = "Blog" 
+divided_count = (Post.count(:all) / 5.0).ceil
+%>
 
 <% @posts.each do |post| %>
 	<%= render :partial => 'post', :locals => { :post => post } %>
 <% end %>
 <br />
-<%for i in 1..((Post.count(:all) / 5.0).ceil) %>
+<% if params[:id].to_i > 1 %>
+  <a href="/posts/pages/1">&laquo;</a> 
+  <a href="/posts/pages/<%= params[:id].to_i - 1 %>">&lt;</a>
+<% end %>
+
+<%for i in 1..(divided_count) %>
  <a href="/posts/pages/<%= i %>"><%= i %></a>
+<% end %>
+
+<% if params[:id].to_i < divided_count %>
+  <a href="/posts/pages/<%= params[:id].to_i + 1 %>">&gt;</a>
+  <a href="/posts/pages/<%= divided_count %>">&raquo;</a>
 <% end %>
 
 <%= link_to 'New Post', new_post_path %> 

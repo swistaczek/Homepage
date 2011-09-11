@@ -19,6 +19,7 @@ class PostsController < ApplicationController
       params[:id] = 1
     end
     @posts = Post.find(:all, :order => 'id DESC', :offset => (params[:id].to_i * 5 - 5), :limit => 5)
+    @divided_count = (Post.count(:all) / 5.0).ceil
 
     respond_to do |format|
       format.html # index.html.erb

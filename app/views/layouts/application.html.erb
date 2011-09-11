@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Keraxel's Homesite</title>
+		<title><%= @page_title + " - " unless @page_title.nil? %>Keraxel's Homesite</title>
 		<%= stylesheet_link_tag :all %>
 		<%= javascript_include_tag :defaults %>
 		<%= javascript_include_tag "harvester" %>
@@ -14,7 +14,7 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="#">Blog</a>
+					<%= link_to "Blog", posts_path %>
 				</li>
 				<li>
 					<a href="#">About</a>

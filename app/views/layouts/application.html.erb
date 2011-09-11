@@ -20,7 +20,7 @@
 					<a href="#">Archives</a>
 				</li>
 				<li>
-					<%= link_to "About", {:controller => "page", :action => "about"}, :class => (@page_title == "About" and "selected" or "empty") %>
+					<%= link_to "About", {:controller => "pages", :action => "about"}, :class => (@page_title == "About" and "selected" or "empty") %>
 				</li>
 				<li class="rss">
 					<a href="#">RSS</a>
@@ -41,7 +41,7 @@
 						<li>
 							<script type="text/javascript">
 								<!--//
-								showMeineMajl("email", "kamil." + "michal.cieslak", "gmail.com", "");
+								showMeineMajl("email", "kamil" + "." + "michal.cieslak", "gmail.com", "");
 								//-->
 							</script>
 							<a id="jabber" href="xmpp:keraxel@ubuntu.pl" title="Jabber/XMPP"></a>
@@ -53,7 +53,7 @@
 							<a id="facebook" href="https://www.facebook.com/Keraxel" title="Facebook"></a><a id="google-plus" href="https://plus.google.com/113284672687908084033/" title="Google+"></a>
 						</li>
 						<li>
-							<img id="qr" src="images/Kamil-Cieslak.png" alt="QR Code" title="QR Code"></img>
+							<img id="qr" src="/images/Kamil-Cieslak.png" alt="QR Code" title="QR Code"></img>
 						</li>
 					</ul>
 				</section>

@@ -1,21 +1,20 @@
 <% @page_title = "Blog" %>
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
 <article class="blogPost">
 	<header>
 		<h2><%=link_to post.title, post %></h2>
 		<p>
-			Posted on
-			<time datetime="2011-09-19T23:31:45+01:00">
-				<%= post.created_at %>
+			<time datetime="<%= convert_rails_date_to_html_date(post.created_at) %>">
+				<%= format_date(post.created_at) %>
 			</time>
-			by 
+			przez 
 			<%= link_to post.author.name, Post.find_all_by_id(post.author_id) %><br/>
 			<%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
 		</p>
 	</header>
 	<p>
-		<%= post.content %>
+		<%= post.content.strip %>
 	</p>
 </article>
 <% end %>

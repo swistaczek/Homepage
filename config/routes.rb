@@ -7,7 +7,7 @@ Homepage::Application.routes.draw do
 
   resources :posts
 
-  get "page/about"
+  get "pages/about"
 
   match ':controller(/:action(/:id(.:format)))'
 

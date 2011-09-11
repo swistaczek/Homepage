@@ -15,7 +15,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
+    if params[:id].nil?
+      params[:id] = 1
+    end
+    @posts = Post.find(:all, :order => 'id DESC', :offset => (params[:id].to_i * 5 - 5), :limit => 5)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,0 +1,15 @@
+<article class="blogPost">
+	<header>
+		<h2><%=link_to post.title, post %></h2>
+		<p>
+			<time datetime="<%= convert_rails_date_to_html_date(post.created_at) %>">
+				<%= format_date(post.created_at) %>
+			</time>
+			przez 
+			<%= link_to post.author.name, Post.find_all_by_id(post.author_id) %><br/>
+		</p>
+	</header>
+	<p>
+		<%= post.content.strip %>
+	</p>
+</article>

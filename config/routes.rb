@@ -1,6 +1,8 @@
 Homepage::Application.routes.draw do
   root :to => 'posts#index'
   
+  match 'posts/pages(/:id)', :to => 'posts#index'
+  
   resources :authors
 
   resources :comments

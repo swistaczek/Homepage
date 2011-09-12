@@ -140,6 +140,10 @@ nav ul li {
 		#main p:first-letter {
 			/*font-size: 30px;*/
 		}
+		
+#pages_links {
+	text-align: center;
+}
 	
 	#content #space {
 		display: table-cell;

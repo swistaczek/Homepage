@@ -18,4 +18,4 @@
   <a href="/posts/pages/<%= @divided_count %>">&raquo;</a>
 <% end %>
 
-<%= link_to 'New Post', new_post_path %> 
+<%= link_to 'New Post', new_post_path if user_signed_in? %> 

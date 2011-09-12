@@ -1,4 +1,5 @@
 class PostsController < ApplicationController 
+  before_filter :verify_logged_in, :only => [:new, :edit, :create, :update]
   # GET /posts
   # GET /posts.xml
   def index
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.xml
   def new
-    @post = Post.new
+    @post = Post.new(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -83,5 +84,11 @@ class PostsController < ApplicationController
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  
+  def verify_logged_in
+    redirect_to new_user_registration_path unless user_signed_in?
   end
 end

@@ -2,5 +2,8 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Destroy', @post, :confirm => 'Jestes pewien?', :method => :delete %> | 
+<%= link_to 'Edit', edit_post_path(@post) if user_signed_in? %> 
+<%= ' | ' if user_signed_in? %> 
+<%= link_to 'Destroy', @post, :confirm => 'Jestes pewien?', :method => :delete if user_signed_in? %>
+<%= ' | ' if user_signed_in? %>
 <%= link_to 'Back', posts_path %>

@@ -3,8 +3,8 @@ Homepage::Application.routes.draw do
   
   match 'posts/pages(/:id)', :to => 'posts#index'
   
-  resources :authors
-
+  devise_for :users
+  
   resources :comments
 
   resources :posts
